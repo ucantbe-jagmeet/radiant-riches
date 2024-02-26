@@ -83,17 +83,17 @@ const Main = () => {
         <div className='py-10'>
             {
                 data.map((obj, index) => {
-                    return <div key={index} className='h-auto relative py-10'>
+                    return <div key={index} className='h-auto relative py-10 '>
                         <Offers bestChoice={obj?.best_choice} bestValue={obj?.best_value} />
-                        <h2 className='absolute h-9 w-9 top-10 border-2 border-[#E1E4E6] rounded-full flex items-center justify-center text-[#626E79]'>{index + 1}</h2>
+                        <h2 className='absolute h-9 w-9 md:top-10 -top-2 -left-1 border-2 border-[#E1E4E6] rounded-full flex items-center justify-center text-[#626E79] '>{index + 1}</h2>
 
                         {/* main */}
                         <div className='h-full grid grid-cols-9'>
-                            <div className='h-auto col-span-2 flex items-center justify-center flex-col'>
+                            <div className='h-auto md:col-span-2 md:flex items-center justify-center flex-col hidden'>
                                 <Image src={Computer} alt="computer" width={40} height={40} className='w-3/5 mt-5' />
                                 <p className='mt-3 text-xs'>{obj.name}</p>
                             </div>
-                            <div className='col-span-4 h-auto  mt-5'>
+                            <div className='col-span-9 md:col-span-4 h-auto  mt-5'>
                                 <h2 className='font-bold text-[15px]'>
                                     {obj.title}- <span className='font-normal  '>{obj.text}</span>
                                 </h2>
@@ -135,13 +135,13 @@ const Main = () => {
                                 {/* Show more button */}
                                 <button type="button" className='text-[#1B88F4] text-base mt-2'>Show more </button>
                             </div>
-                            <div className='col-span-3 flex flex-col justify-between items-center px-10'>
-                                <div className='flex items-center justify-center flex-col bg-[#F3F9FF] rounded-b-xl w-36  py-2'>
+                            <div className='col-span-9 md:col-span-3 flex md:flex-col justify-between items-center px-10 mt-5 md:mt-0'>
+                                <div className='flex items-center justify-center flex-col bg-[#F3F9FF] rounded-b-xl md:w-36 w-52  py-2'>
                                     <h2 className='text-[#074786] text-3xl py-3'>{obj.rating}</h2>
                                     <h2 className='text-[#074786] text-sm '>{obj.ratingComment}</h2>
                                     <Image src={stars} alt="icon" width={50} height={10} className='w-1/2 mt-2' />
                                 </div>
-                                <button type="button" className='h-12 bg-[#1B88F4] rounded-xl text-white w-full'>view</button>
+                                <button type="button" className='h-12 bg-[#1B88F4] rounded-xl text-white w-full ml-20 md:ml-0'>view</button>
                             </div>
                         </div>
                     </div>
